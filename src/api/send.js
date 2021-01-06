@@ -29,15 +29,11 @@ router.post('/', async (req, res) => {
   }
 
   remetent.sendMail(email, function (error, info) {
-    if (error)
-      return res.json({
-        message: 'Erro interno!'
-      })
+    return res.json({
+      message: 'E-mail enviado com sucesso!'
+    });
   })
 
-  res.json({
-    message: 'E-mail enviado com sucesso!'
-  });
 })
 
 module.exports = router;
