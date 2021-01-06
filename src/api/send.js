@@ -8,7 +8,7 @@ router.post('/', async (req, res) => {
     secure: true,
     auth: {
       user: 'clinicapolisipo@gmail.com',
-      pass: 'fabipsicologa',
+      pass: 'Ref@t-Poli-200',
     }
   })
   const email = {
