@@ -2,13 +2,14 @@ const router = require('express').Router();
 const nodemailer = require('nodemailer');
 
 router.post('/', async (req, res) => {
+  console.log(process.env.GMAIL_PASSWORD)
   const remetent = nodemailer.createTransport({
     service: 'Gmail',
     port: 465,
     secure: true,
     auth: {
       user: 'clinicapolisipo@gmail.com',
-      pass: 'Ref@t-Poli-200',
+      pass: process.env.GMAIL_PASSWORD,
     }
   })
   const email = {
