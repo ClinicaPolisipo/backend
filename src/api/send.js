@@ -30,9 +30,11 @@ router.post('/', async (req, res) => {
   }
 
   remetent.sendMail(email, function (error, info) {
-    return res.json({
-      message: 'E-mail enviado com sucesso!'
-    });
+    if(error)
+      return res.json(error);
+
+    else if(info)
+      return res.json(info);
   })
 
 })
